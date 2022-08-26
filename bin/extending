@@ -3,5 +3,7 @@
 require_relative "../lib/kid"
 require_relative "../lib/dancer"
 
+# This allows us to utilize the 'MetaDancing' module's 'metadata' method which we were able to
+# place into each separate class with the 'extend' keyword:
 puts Kid.metadata
 puts Dancer.metadata

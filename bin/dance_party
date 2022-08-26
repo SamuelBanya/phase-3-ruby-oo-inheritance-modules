@@ -6,5 +6,21 @@ require_relative "../lib/dancer"
 angelina = Kid.new("Angelina")
 mikhail_baryshnikov = Dancer.new("Mikhail")
 
+# Because we were able to import the related 'dance_module.rb' module, we can utilize '.twirl' and '.take_a_bow'
+# methods, and share behaviors between the two separate classes aka 'Kid' and 'Dancer' without an issue:
 puts "#{angelina.name} says: #{angelina.twirl}"
 puts "#{mikhail_baryshnikov.name} says: #{mikhail_baryshnikov.take_a_bow}"
+
+# My own revision since we can now include 'instance' methods as a result of including 'FancyDance::InstanceMethods':
+jacques = Dancer.new("Jacques")
+jacques.twirl()
+jacquesl.jump()
+
+buster = Kid.new("Buster")
+buster.jump()
+buster.take_a_bow()
+
+# Since we used the 'extend' keyword earlier, we can now call the 'metadata' class method on the 'Dancer' and
+# 'Kid' classes:
+puts Dancer.metadata
+puts Kid.metadata
